@@ -1,9 +1,14 @@
 import React from 'react'
 import Button from '../Button/Button'
+import './ProdutItem.css'
 
 
 
-const ProductItem = () => {
+const ProductItem = (product, className, onAdd) => {
+    onAddHandler = () => {
+        onAdd(product);
+    }
+
   return (
     <div className={'product' + className}>
         <div className={'img'}/>
@@ -13,7 +18,7 @@ const ProductItem = () => {
              <span>Price: <b>{product.price}</b></span>
         </div>
 
-        <Button className={'add-btn'}>Add to bin</Button>
+        <Button className={'add-btn'} onClick ={ onAddHandler}>Add to bin</Button>
     </div>
   )
 }
