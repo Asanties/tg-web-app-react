@@ -4,12 +4,12 @@ import ProductItem from '../ProductItem/ProductItem';
 import { useTelegram } from '../../hooks/useTelegram';
 
 const products = [
-    {id: '1', title: 'Poops', price:'100', description: 'someones poop'},
-    {id: '2', title: 'Waifu', price:'1200', description: 'waifu'},
-    {id: '3', title: 'manga', price:'500', description: 'One Piece'},
-    {id: '4', title: 'manga2', price:'1040', description: 'Naruto'},
-    {id: '5', title: 'manga3', price:'1040', description: 'Slime reborn'},
-    {id: '6', title: 'hat', price:'2100', description: 'Luffy hat'}
+    {id: '1', title: 'Poops', price: 100, description: 'someones poop'},
+    {id: '2', title: 'Waifu', price: 1200, description: 'waifu'},
+    {id: '3', title: 'manga', price: 500, description: 'One Piece'},
+    {id: '4', title: 'manga2', price: 1040, description: 'Naruto'},
+    {id: '5', title: 'manga3', price: 1040, description: 'Slime reborn'},
+    {id: '6', title: 'hat', price: 2100, description: 'Luffy hat'},
 ]
 
 const getTotalPrice = (items = []) => {
@@ -29,7 +29,7 @@ const ProductList = () => {
 
 
     const onAdd = (product) => {
-        const alreadyAdded = addedItems.find(item => item.id ===product.id);
+        const alreadyAdded = addedItems.find(item => item.id === product.id);
         let newItems = [];
 
         if(alreadyAdded) 
@@ -48,22 +48,23 @@ const ProductList = () => {
         } else {
             tg.MainButton.show();
             tg.MainButton.setParams({
-                text: 'Buy ${getTotalPrice(newItems)}'
+                text: "Buy ${getTotalPrice(newItems)}"
             })
         }
 
     }
+
   return (
     <div className = {"list"}>
     {products.map (item => (
         <ProductItem
-        products={item}
+        product={item}
         onAdd={onAdd}
         className={'item'}
         />
     ))}
     </div>
-  )
-}
+  );
+};
 
 export default ProductList

@@ -5,7 +5,7 @@ import './ProductItem.css'
 
 
 
-const ProductItem = (product, className, onAdd) => {
+const ProductItem = ({product, className, onAdd}) => {
     const onAddHandler = () => {
         onAdd(product);
     }
