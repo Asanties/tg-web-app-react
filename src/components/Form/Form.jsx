@@ -14,7 +14,7 @@ const Form = () => {
             street,
             subject,
         }
-        tg.sendData(JSON.stringify(data));
+        Telegram.WebApp.sendData(JSON.stringify(data));
 
     }, [country, street, subject]);
 
@@ -23,10 +23,10 @@ const Form = () => {
         return () => {
             tg.offEvent('mainButtonClicked', onSendData)
         }
-    }, [])
+    }, [onSendData])
 
     useEffect(() => { tg.MainButton.setParams({
-        text:'send data'
+        text:{sendData}
     })
 
     }, []);
