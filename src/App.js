@@ -13,7 +13,9 @@ function App() {
 
   useEffect(  () =>   {
      tg.ready();
-  },   [] )
+  },   [] );
+
+
 
   
   return (
