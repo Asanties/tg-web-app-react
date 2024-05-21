@@ -26,7 +26,7 @@ const Form = () => {
     }, [onSendData])
 
     useEffect(() => { tg.MainButton.setParams({
-        text:{sendData}
+        text:'send data'
     })
 
     }, []);
