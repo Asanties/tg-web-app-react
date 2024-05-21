@@ -22,10 +22,14 @@ const getTotalPrice = (items = []) => {
 
 const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
+
+
     const {tg} = useTelegram();
 
+
+
     const onAdd = (product) => {
-        const alreadyAdded = addedItems.find(item === item.id ===product.id);
+        const alreadyAdded = addedItems.find(item => item.id ===product.id);
         let newItems = [];
 
         if(alreadyAdded) 
@@ -50,8 +54,8 @@ const ProductList = () => {
 
     }
   return (
-    <div className={"list"}>
-    {products.map(item => (
+    <div className = {"list"}>
+    {products.map (item => (
         <ProductItem
         key= {item.id}
         products={item}

@@ -1,12 +1,12 @@
 import React from 'react'
 import Button from '../Button/Button'
 import './ProductItem.css'
-import ProductList from '../ProductList/ProductList'
+
 
 
 
 const ProductItem = (product, className, onAdd) => {
-    onAddHandler = () => {
+    const onAddHandler = () => {
         onAdd(product);
     }
 
@@ -19,7 +19,9 @@ const ProductItem = (product, className, onAdd) => {
              <span>Price: <b>{product.price}</b></span>
         </div>
 
-        <Button className={'add-btn'} onClick ={ onAddHandler}>Add to bin</Button>
+        <Button className={'add-btn'} onClick ={onAddHandler}>
+             Add to bin
+        </Button>
     </div>
   )
 }
