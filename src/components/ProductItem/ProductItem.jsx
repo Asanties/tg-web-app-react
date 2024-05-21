@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from '../Button/Button'
-import './ProdutItem.css'
+import './ProductItem.css'
 
 
 
@@ -22,3 +22,5 @@ const ProductItem = (product, className, onAdd) => {
     </div>
   )
 }
+
+export default ProductItem
